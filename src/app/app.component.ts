@@ -6,5 +6,8 @@ import { AgmCoreModule } from '@agm/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  constructor(db:AngularFireStore){
+    
+  }
   title = 'app';
 }
