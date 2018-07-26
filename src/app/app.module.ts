@@ -1,6 +1,9 @@
+import { environment } from './../environments/environment.prod';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AgmCoreModule } from '@agm/core';
+import {AngularFireModule} from 'angularfire2'
+
 // import { HttpClient } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -26,7 +29,8 @@ import { GoogleMapsAPIWrapper } from '@agm/core/services/google-maps-api-wrapper
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    AgmCoreModule.forRoot({apiKey:''})
+    AgmCoreModule.forRoot({apiKey:''}),
+    AngularFireModule.initializeApp(environment.firebase, 'demo-app')
   ],
   providers: [
     GoogleMapsAPIWrapper
